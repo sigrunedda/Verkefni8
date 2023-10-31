@@ -27,17 +27,25 @@ function addProductToCart(product, quantity) {
   // Hér þarf að finna `<tbody>` í töflu og setja `cartLine` inn í það
  // const cart = document.querySelector('.cart');
   const cartTable = document.querySelector('.cart-table');
-  const cartTableBody = document.querySelector('.cart-table tbody');
+  const cart = document.querySelector('.cart-table tbody');
+
+  if (!cart) {
+    console.warn('fann ekki .cart');
+    return;
+  }
 
   
   // TODO hér þarf að athuga hvort lína fyrir vöruna sé þegar til
   const cartLine = createCartLine(product, quantity);
-  cartTableBody.appendChild(cartLine);
+  cart.appendChild(cartLine);
+
 
   // Sýna efni körfu
   showCartContent(true);
 
   // TODO sýna/uppfæra samtölu körfu
+
+  document.querySelector('total');
 }
 
 function submitHandler(event) {
@@ -55,10 +63,17 @@ function submitHandler(event) {
 
   // TODO hér þarf að finna fjölda sem á að bæta við körfu með því að athuga
   // á input
-  const quantity = 1;
+ const quantity = 1;
 
   // Bætum vöru í körfu (hér væri gott að bæta við athugun á því að varan sé til)
+
   addProductToCart(product, quantity);
+
+  if(!productId) {
+    console.warn('Vara ekki til');
+    return;
+  }
+  
 }
 
 // Finna öll form með class="add"
