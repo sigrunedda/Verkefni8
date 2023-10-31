@@ -62,8 +62,12 @@ function submitHandler(event) {
   const product = products.find((i) => i.id === productId);
 
   // TODO hér þarf að finna fjölda sem á að bæta við körfu með því að athuga
-  // á input
+  // á input HELP
  const quantity = 1;
+
+ if(product?.quantity > 1) {
+  quantity;
+ }
 
   // Bætum vöru í körfu (hér væri gott að bæta við athugun á því að varan sé til)
 
