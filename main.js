@@ -1,4 +1,5 @@
 import { createCartLine, showCartContent } from './lib/ui.js';
+import { validateInteger } from './lib/helpers.js';
 
 const products = [
   {
@@ -44,6 +45,7 @@ function addProductToCart(product, quantity) {
   showCartContent(true);
 
   // TODO sýna/uppfæra samtölu körfu
+  
 
   document.querySelector('total');
 }
@@ -62,12 +64,21 @@ function submitHandler(event) {
   const product = products.find((i) => i.id === productId);
 
   // TODO hér þarf að finna fjölda sem á að bæta við körfu með því að athuga
-  // á input HELP
- const quantity = 1;
+  // á input
+  const quantityInputElement = parent.querySelector('input[type="number"]',);
+  console.log(quantityInputElement);
+  if(!quantityInputElement){
+    console.warn('get ekki fundið fjölda input');
+    return;
+  }
 
- if(product?.quantity > 1) {
-  quantity;
- }
+  const quantity = Number.parseInt(quantityInputElement.value ?? '', 10);
+  if(!validateInteger(quantity, 1, 99)) {
+    console.warn('fjöldi ekki á bilinu [0,99]');
+    return;
+  }
+
+ 
 
   // Bætum vöru í körfu (hér væri gott að bæta við athugun á því að varan sé til)
 
