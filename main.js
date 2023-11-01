@@ -40,14 +40,17 @@ function addProductToCart(product, quantity) {
   const cartLine = createCartLine(product, quantity);
   cart.appendChild(cartLine);
 
+  
+
 
   // Sýna efni körfu
   showCartContent(true);
 
   // TODO sýna/uppfæra samtölu körfu
-  
 
+  
   document.querySelector('total');
+
 }
 
 function submitHandler(event) {
@@ -84,10 +87,7 @@ function submitHandler(event) {
 
   addProductToCart(product, quantity);
 
-  if(!productId) {
-    console.warn('Vara ekki til');
-    return;
-  }
+
   
 }
 

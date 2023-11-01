@@ -42,6 +42,7 @@ input[type='number'] {
 
 button {
   padding-inline: calc(var(--spacing) / 2);
+  margin-top: 6px;
 }
 
 h1,
