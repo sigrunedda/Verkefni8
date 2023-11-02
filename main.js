@@ -45,8 +45,6 @@ function addProductToCart(product, quantity) {
 
   // TODO sýna/uppfæra samtölu körfu
 
- 
-
 }
 
 function submitHandler(event) {
