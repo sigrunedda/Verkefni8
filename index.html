@@ -80,15 +80,14 @@
             <tfoot>
               <tr>
                 <td colspan="3">Samtals</td>
-                <td><span class="price">0 kr.-</span></td>
+                <td><span class="totalPrice">0 kr.-</span></td>
               </tr>
             </tfoot>
           </table>
         </div>
-
       </div>
 
-      <form method="post" class="post hidden">
+      <form method="post" class="cartForm hidden">
         <div class="form-field">
           <label for="name">Nafn:</label>
           <input type="text" name="name" id="name">
@@ -97,14 +96,13 @@
           <label for="address">Heimilisfang:</label>
           <input type="text" name="address" id="address">
         </div>
-        <button>Ganga frá kaupum</button>
+        <button name="submitOrder">Ganga frá kaupum</button>
       </form>
-
     </section>
     <section class="receipt hidden">
       <h2>Kvittun</h2>
       <p>Takk fyrir að versla hjá okkur!</p>
-      <p><a href=".">Kaupa meira</a>.</p>
+      <p><a href="index.html">Kaupa meira</a>.</p>
     </section>
   </main>
 </body>

@@ -1,5 +1,6 @@
 import { createCartLine, showCartContent } from './lib/ui.js';
 import { validateInteger } from './lib/helpers.js';
+import { formatNumber } from './lib/helpers.js';
 
 const products = [
   {
@@ -35,21 +36,16 @@ function addProductToCart(product, quantity) {
     return;
   }
 
-  
   // TODO hér þarf að athuga hvort lína fyrir vöruna sé þegar til
   const cartLine = createCartLine(product, quantity);
   cart.appendChild(cartLine);
-
-  
-
 
   // Sýna efni körfu
   showCartContent(true);
 
   // TODO sýna/uppfæra samtölu körfu
 
-  
-  document.querySelector('total');
+ 
 
 }
 
@@ -81,14 +77,10 @@ function submitHandler(event) {
     return;
   }
 
- 
-
   // Bætum vöru í körfu (hér væri gott að bæta við athugun á því að varan sé til)
 
   addProductToCart(product, quantity);
 
-
-  
 }
 
 // Finna öll form með class="add"
@@ -101,3 +93,4 @@ for (const form of Array.from(addToCartForms)) {
 }
 
 // TODO bæta við event handler á form sem submittar pöntun
+
